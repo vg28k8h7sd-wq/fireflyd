@@ -498,11 +498,11 @@
     }
 
     // Submit to Netlify
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
-    })
+    fetch('https://formspree.io/f/xbdzwend', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ email: email })
+})
     .then(() => {
       formInner.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
       formInner.style.opacity = '0';
